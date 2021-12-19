@@ -2,21 +2,12 @@
   "name": "express-example",
   "version": "1.0.0",
   "description": "MVC with build express and mongose",
-  "main": "serve.js",
+  "main": "app.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "dev": "nodemon npm start"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gitsava/express-example.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/gitsava/express-example/issues"
-  },
-  "homepage": "https://github.com/gitsava/express-example#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.2",

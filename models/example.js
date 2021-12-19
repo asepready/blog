@@ -1,13 +1,10 @@
-var mongoose = require('mongoose');
+// import mongoose 
+import mongoose from "mongoose";
 
-var Schema = mongoose.Schema;
-
-var ExampleSchema = new Schema({
-  string:{
-    type: String,
-    required: false,
-    maxlength: 100
-  }
+// Create Schema
+const DataSchema = mongoose.Schema({
+  name: String
 });
 
-module.exports = mongoose.model('Example', ExampleSchema);
+// export model
+export default mongoose.model('Data', DataSchema);
