@@ -2,7 +2,7 @@
 REST API MVC with build express and mongose
 
 # MVC Concepts
-![](https://github.com/gitsava/REStjs/blob/main/img/mvc_express.png)
+![](https://github.com/gitsava/REStjs/blob/main/public/img/mvc_express.png)
 ## Requirements
  - Nodejs V16.13.1 > Latest Version
 
