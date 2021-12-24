@@ -10,7 +10,7 @@ import cors from "cors";
 const app = express();
 
 // connect ke database mongoDB
-mongoose.connect("mongodb://localhost:27017/restful",{ 
+mongoose.connect("mongodb://localhost:27017/expressjs",{ 
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
