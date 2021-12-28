@@ -1,5 +1,5 @@
-// import mongoose 
-import mongoose from "mongoose";
+// import mongoose
+import mongoose from 'mongoose';
 
 // Create Schema
 const DataSchema = mongoose.Schema({

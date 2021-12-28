@@ -1,13 +1,15 @@
 // import express
-import express from "express";
+import express from 'express';
 // import controllers
-import { GetAll, 
-    GetById, 
-    Save, 
-    Update,
-    Delete } from "../controllers/exampleCtrl.js";
+import {
+  GetAll,
+  GetById,
+  Save,
+  Update,
+  Delete
+} from '../controllers/exampleCtrl.js';
 
-    // express router
+// express router
 const router = express.Router();
 
 // Route get All
@@ -23,4 +25,3 @@ router.delete('/:id', Delete);
 
 // export router
 export default router;
-
