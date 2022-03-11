@@ -12,9 +12,12 @@ from blog.db import get_db
 
 bp = Blueprint("blog", __name__)
 
-
 @bp.route("/")
 def index():
+    return render_template("landing.html")
+
+@bp.route("/blog.html")
+def blog():
     """Show all the posts, most recent first."""
     db = get_db()
     posts = db.execute(

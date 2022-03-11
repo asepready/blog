@@ -2,12 +2,31 @@
 -- Drop any existing data and create empty tables.
 
 DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS lookup;
+DROP TABLE IF EXISTS tag;
 DROP TABLE IF EXISTS post;
+DROP TABLE IF EXISTS comment;
 
 CREATE TABLE user (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   username TEXT UNIQUE NOT NULL,
-  password TEXT NOT NULL
+  password TEXT NOT NULL,
+  salt TEXT NOT NULL,
+  email TEXT NOT NULL,
+  profile TEXT NOT NULL,
+);
+
+CREATE TABLE lookup (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  code TEXT NOT NULL,
+  type TEXT NOT NULL,
+  position TEXT NOT NULL
+);
+
+CREATE TABLE tag (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  frequency TEXT NOT NULL
 );
 
 CREATE TABLE post (
@@ -15,6 +34,20 @@ CREATE TABLE post (
   author_id INTEGER NOT NULL,
   created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   title TEXT NOT NULL,
-  body TEXT NOT NULL,
+  content TEXT NOT NULL,
+  tag TEXT NOT NULL,
+  status TEXT NOT NULL,
   FOREIGN KEY (author_id) REFERENCES user (id)
+);
+
+CREATE TABLE comment (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  post_id INTEGER NOT NULL,
+  created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  content TEXT NOT NULL,
+  status TEXT NOT NULL,
+  author TEXT NOT NULL,
+  email TEXT NOT NULL,
+  url TEXT NOT NULL,
+  FOREIGN KEY (post_id) REFERENCES post (id)
 );
