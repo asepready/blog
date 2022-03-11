@@ -1,4 +1,4 @@
-Flaskr
+Blog
 ======
 
 The basic blog app built in the Flask `tutorial`_.
@@ -33,7 +33,7 @@ Or on Windows cmd::
 
 Install Flaskr::
 
-    $ pip install -e .
+    $ pip install -e ./venv
 
 Or if you are using the main branch, install Flask from source before
 installing Flaskr::
